@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AbsoluteLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/tvemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="58dp"
+        android:layout_y="109dp"
+        android:text="Email:" />
+
+    <EditText
+        android:id="@+id/etmail"
+        android:layout_width="149dp"
+        android:layout_height="38dp"
+        android:layout_x="146dp"
+        android:layout_y="100dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etacpass"
+        android:layout_width="149dp"
+        android:layout_height="38dp"
+        android:layout_x="145dp"
+        android:layout_y="145dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etnpass"
+        android:layout_width="149dp"
+        android:layout_height="38dp"
+        android:layout_x="145dp"
+        android:layout_y="185dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etvpass"
+        android:layout_width="149dp"
+        android:layout_height="38dp"
+        android:layout_x="144dp"
+        android:layout_y="223dp"
+        android:textSize="18sp" />
+
+    <ImageButton
+        android:id="@+id/btnchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="84dp"
+        android:layout_y="318dp"
+        android:onClick="changes" />
+
+    <ImageButton
+        android:id="@+id/btncancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="190dp"
+        android:layout_y="317dp"
+        android:onClick="cancel" />
+
+    <TextView
+        android:id="@+id/tvapass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="22dp"
+        android:layout_y="153dp"
+        android:text="Actual pass Sync:" />
+
+    <TextView
+        android:id="@+id/tvnpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="25dp"
+        android:layout_y="190dp"
+        android:text="New pass Sync:" />
+
+    <TextView
+        android:id="@+id/tvvnpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="6dp"
+        android:layout_y="230dp"
+        android:text="Verify New Pass Sync:" />
+
+</AbsoluteLayout>

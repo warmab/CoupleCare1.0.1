@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget0"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="32dp"
+        android:layout_y="37dp"
+        android:text="Period Cycle:" />
+
+    <Spinner
+        android:id="@+id/cycledays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="31dp"
+        android:layout_y="67dp" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="32dp"
+        android:layout_y="127dp"
+        android:text="Start Period:" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_x="31dp"
+        android:layout_y="210dp"
+        android:text="Finish Period:" />
+
+    <ImageButton
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="78dp"
+        android:layout_y="329dp"
+        android:onClick="callsettings" />
+
+    <ImageButton
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="179dp"
+        android:layout_y="328dp" />
+
+    <ImageButton
+        android:id="@+id/btnstart"
+        android:layout_width="261dp"
+        android:layout_height="62dp"
+        android:layout_x="30dp"
+        android:layout_y="147dp"
+        android:onClick="showpickerbegin"
+        android:src="@drawable/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/btnfinish"
+        android:layout_width="261dp"
+        android:layout_height="62dp"
+        android:layout_x="33dp"
+        android:layout_y="233dp"
+        android:onClick="showpickerfinish" />
+
+</AbsoluteLayout>

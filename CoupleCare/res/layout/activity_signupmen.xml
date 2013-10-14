@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget0"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="51dp"
+        android:layout_y="137dp"
+        android:text="User Name:" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="62dp"
+        android:layout_y="177dp"
+        android:text="Email:" />
+
+    <EditText
+        android:id="@+id/etunamem"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_x="131dp"
+        android:layout_y="126dp"
+        android:text=""
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etemailm"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_x="131dp"
+        android:layout_y="166dp"
+        android:text=""
+        android:textSize="18sp" />
+
+    <ImageButton
+        android:id="@+id/btnsend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="70dp"
+        android:layout_y="324dp"
+        android:onClick="execute" />
+
+    <ImageButton
+        android:id="@+id/btncancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="175dp"
+        android:layout_y="324dp" />
+
+    <EditText
+        android:id="@+id/etpassync"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_x="132dp"
+        android:layout_y="205dp"
+        android:text=""
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="50dp"
+        android:layout_y="217dp"
+        android:text="Pass Sync:" />
+
+</AbsoluteLayout>

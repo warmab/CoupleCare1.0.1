@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget0"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageButton
+        android:id="@+id/btnlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="7dp"
+        android:layout_y="7dp" />
+
+    <ImageButton
+        android:id="@+id/btnlater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="6dp"
+        android:layout_y="64dp" />
+
+    <ImageButton
+        android:id="@+id/btnhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="247dp"
+        android:layout_y="9dp" />
+
+    <TextView
+        android:id="@+id/tvchspinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="10dp"
+        android:layout_y="121dp"
+        android:hint="Change your cycle days:"
+        android:text="Change Cycle days:" />
+
+    <TextView
+        android:id="@+id/beginperiod"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_x="8dp"
+        android:layout_y="196dp"
+        android:text="Change Period Beginning:" />
+
+    <Button
+        android:id="@+id/btnbegin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="10dp"
+        android:layout_y="219dp"
+        android:onClick="showpickerbegin" />
+
+    <ImageButton
+        android:id="@+id/btndone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="50dp"
+        android:layout_y="364dp" />
+
+    <ImageButton
+        android:id="@+id/btnchangepass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="227dp"
+        android:layout_y="364dp"
+        android:onClick="changpass" />
+
+    <ImageButton
+        android:id="@+id/btncancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="142dp"
+        android:layout_y="363dp"
+        android:onClick="cancel" />
+
+    <TextView
+        android:id="@+id/finishperiod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="10dp"
+        android:layout_y="275dp"
+        android:text="Change Period Finish:" />
+
+    <Button
+        android:id="@+id/btndatefinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="9dp"
+        android:layout_y="299dp"
+        android:onClick="showpickerfinish" />
+
+    <Spinner
+        android:id="@+id/spinnerdays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="16dp"
+        android:layout_y="136dp" />
+
+</AbsoluteLayout>
