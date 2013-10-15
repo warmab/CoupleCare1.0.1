@@ -30,6 +30,7 @@
         <activity android:name="Activity_principalview"></activity>
         <activity android:name="Activity_Settings"></activity>
         <activity android:name="Activity_changespass"></activity>
+        <activity android:name="Activity_ListCalendar"></activity>
     </application>
 
 </manifest>

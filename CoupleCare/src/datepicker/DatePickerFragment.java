@@ -1,6 +1,10 @@
 package datepicker;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import android.annotation.TargetApi;
 import android.app.DatePickerDialog;
@@ -41,6 +45,9 @@ public class DatePickerFragment extends DialogFragment implements
 		editor.putString("datestart", dateStart);
 		editor.commit();
 	}
+	
+
+	
 	
 
 }

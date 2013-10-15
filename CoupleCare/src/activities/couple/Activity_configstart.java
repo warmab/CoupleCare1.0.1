@@ -1,13 +1,22 @@
 package activities.couple;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -43,6 +52,7 @@ public class Activity_configstart extends Activity {
 								+ parentView.getItemAtPosition(position)
 										.toString(), Toast.LENGTH_LONG).show();
 				onPause();
+				
 			}
 
 			public void onNothingSelected(AdapterView<?> parentView) {
@@ -66,14 +76,46 @@ public class Activity_configstart extends Activity {
 	public void showpickerfinish(View v) {
 	    DialogFragment newFragment = new DatePickerFragmentfin();
 	    newFragment.show(getFragmentManager(), "Period Finish");
+		
 	}
-
-
+	
+	public void date(){
+		SharedPreferences pref = getSharedPreferences("datawoman", Context.MODE_PRIVATE);
+		String start = pref.getString("datestart", "");
+		String fin = pref.getString("datefinish", "");
+		Calendar cbegin = GregorianCalendar.getInstance();
+		Calendar cfinish = GregorianCalendar.getInstance();
+		Date dateb = null;
+		Date datef = null;
+		SimpleDateFormat formatdate = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			dateb = formatdate.parse(start);
+			datef = formatdate.parse(fin);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		long diference = Math.abs(datef.getDate()- dateb.getDate()); 
+		Editor editor = pref.edit();
+		editor.putLong("perioddays", diference);
+		editor.commit();
+		
+		Toast.makeText(getApplicationContext(), "Thanks for your information", Toast.LENGTH_LONG).show();
+	
+		String begin = ""+dateb;
+		String finish = ""+datef;
+        String str = ""+diference;
+		Log.d("DiferenceDate", str);
+		Log.d("Begin", begin);
+		Log.d("finish", finish);
+	}
+	
+	
 	@Override
 	public void onPause() {
 		// get Sinner Selected text here
 		String selectedtext = ListCycle.getSelectedItem().toString();
 		int duration = Integer.parseInt(selectedtext);
+		
 
 		// Create SharedPreferences to store selected value
 
@@ -87,15 +129,18 @@ public class Activity_configstart extends Activity {
 
 	}
 	
+	public void callppalview(View view){
+		date();
+		Intent i = new Intent (this,Activity_principalview.class);
+		startActivity(i);
+		
+	}
+	
 	public void callsettings(View view){
 		Intent i = new Intent(this,Activity_Settings.class);
 		startActivity(i);
 	}
 	
-	private void callppview(View view) {
-		Intent it = new Intent(this,Activity_Settings.class);
-		startActivity(it);
-	}
 
 
 

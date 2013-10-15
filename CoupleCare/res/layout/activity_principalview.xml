@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_x="206dp"
         android:layout_y="351dp"
-        android:onClick="callList" />
+        android:onClick="calllistcal" />
 
     <TextView
         android:id="@+id/tvdaysleft"

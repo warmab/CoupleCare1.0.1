@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_x="78dp"
         android:layout_y="329dp"
-        android:onClick="callsettings" />
+        android:onClick="callppalview" />
 
     <ImageButton
         android:id="@+id/cancel"
