@@ -91,4 +91,13 @@
         android:layout_x="175dp"
         android:layout_y="324dp" />
 
+    <Button
+        android:id="@+id/btnsignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="94dp"
+        android:layout_y="368dp"
+        android:onClick="callsignup"
+        android:text="Signup" />
+
 </AbsoluteLayout>

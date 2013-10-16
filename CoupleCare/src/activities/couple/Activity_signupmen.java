@@ -65,7 +65,7 @@ public class Activity_signupmen extends Activity {
 			
 			@Override
 			public void onClick(DialogInterface dialog1, int id) {
-				callconfig();
+				calllogin();
 				finish();
 			}
 		}); 
@@ -87,6 +87,12 @@ public class Activity_signupmen extends Activity {
 	
 	private void callconfig(){
 		Intent it = new Intent(this, Activity_configstart.class);
+	    it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(it);
+	}
+
+	private void calllogin(){
+		Intent it = new Intent(this, Activity_Login.class);
 	    it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(it);
 	}

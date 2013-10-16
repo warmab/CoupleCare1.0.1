@@ -35,8 +35,8 @@ public class Activity_configstart extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_configstart);
-		DatePicker dpstart,dpfinish;
-		//Use of spinner
+		DatePicker dpstart, dpfinish;
+		// Use of spinner
 		ListCycle = (Spinner) findViewById(R.id.cycledays);
 		String[] options = { "21", "22", "23", "24", "25", "26", "27", "28",
 				"29", "30", "31", "32", "33", "34", "35" };
@@ -52,7 +52,7 @@ public class Activity_configstart extends Activity {
 								+ parentView.getItemAtPosition(position)
 										.toString(), Toast.LENGTH_LONG).show();
 				onPause();
-				
+
 			}
 
 			public void onNothingSelected(AdapterView<?> parentView) {
@@ -60,27 +60,25 @@ public class Activity_configstart extends Activity {
 			}
 		});
 	}
-	
 
-	
 	@SuppressLint("NewApi")
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public void showpickerbegin(View v) {
-	    DialogFragment newFragment = new DatePickerFragment();
-	    newFragment.show(getFragmentManager(), "Period Beggining");
+		DialogFragment newFragment = new DatePickerFragment();
+		newFragment.show(getFragmentManager(), "Period Beggining");
 	}
-	
+
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@SuppressLint("NewApi")
-	
 	public void showpickerfinish(View v) {
-	    DialogFragment newFragment = new DatePickerFragmentfin();
-	    newFragment.show(getFragmentManager(), "Period Finish");
-		
+		DialogFragment newFragment = new DatePickerFragmentfin();
+		newFragment.show(getFragmentManager(), "Period Finish");
+
 	}
-	
-	public void date(){
-		SharedPreferences pref = getSharedPreferences("datawoman", Context.MODE_PRIVATE);
+
+	public void date() {
+		SharedPreferences pref = getSharedPreferences("datawoman",
+				Context.MODE_PRIVATE);
 		String start = pref.getString("datestart", "");
 		String fin = pref.getString("datefinish", "");
 		Calendar cbegin = GregorianCalendar.getInstance();
@@ -94,28 +92,27 @@ public class Activity_configstart extends Activity {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		long diference = Math.abs(datef.getDate()- dateb.getDate()); 
+		long diference = Math.abs(datef.getDate() - dateb.getDate());
 		Editor editor = pref.edit();
 		editor.putLong("perioddays", diference);
 		editor.commit();
-		
-		Toast.makeText(getApplicationContext(), "Thanks for your information", Toast.LENGTH_LONG).show();
-	
-		String begin = ""+dateb;
-		String finish = ""+datef;
-        String str = ""+diference;
+
+		Toast.makeText(getApplicationContext(), "Thanks for your information",
+				Toast.LENGTH_LONG).show();
+
+		String begin = "" + dateb;
+		String finish = "" + datef;
+		String str = "" + diference;
 		Log.d("DiferenceDate", str);
 		Log.d("Begin", begin);
 		Log.d("finish", finish);
 	}
-	
-	
+
 	@Override
 	public void onPause() {
 		// get Sinner Selected text here
 		String selectedtext = ListCycle.getSelectedItem().toString();
 		int duration = Integer.parseInt(selectedtext);
-		
 
 		// Create SharedPreferences to store selected value
 
@@ -128,20 +125,17 @@ public class Activity_configstart extends Activity {
 		super.onPause();
 
 	}
-	
-	public void callppalview(View view){
+
+	public void callppalview(View view) {
 		date();
-		Intent i = new Intent (this,Activity_principalview.class);
+		Intent i = new Intent(this, Activity_principalview.class);
 		startActivity(i);
-		
+
 	}
-	
-	public void callsettings(View view){
-		Intent i = new Intent(this,Activity_Settings.class);
+
+	public void callsettings(View view) {
+		Intent i = new Intent(this, Activity_Settings.class);
 		startActivity(i);
 	}
-	
-
-
 
 }

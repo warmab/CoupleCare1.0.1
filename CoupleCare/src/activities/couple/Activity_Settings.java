@@ -1,5 +1,11 @@
 package activities.couple;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -7,6 +13,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,6 +62,38 @@ public class Activity_Settings extends Activity {
 		});
 	}
 	
+	public void date() {
+		SharedPreferences pref = getSharedPreferences("datawoman",
+				Context.MODE_PRIVATE);
+		String start = pref.getString("datestart", "");
+		String fin = pref.getString("datefinish", "");
+		Calendar cbegin = GregorianCalendar.getInstance();
+		Calendar cfinish = GregorianCalendar.getInstance();
+		Date dateb = null;
+		Date datef = null;
+		SimpleDateFormat formatdate = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			dateb = formatdate.parse(start);
+			datef = formatdate.parse(fin);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		long diference = Math.abs(datef.getDate() - dateb.getDate());
+		Editor editor = pref.edit();
+		editor.putLong("perioddays", diference);
+		editor.commit();
+
+		/*Toast.makeText(getApplicationContext(), "Thanks for your information",
+				Toast.LENGTH_LONG).show();*/
+
+		String begin = "" + dateb;
+		String finish = "" + datef;
+		String str = "" + diference;
+		Log.d("DiferenceDate", str);
+		Log.d("Begin", begin);
+		Log.d("finish", finish);
+	}
+	
 	@SuppressLint("NewApi")
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public void showpickerbegin(View v) {
@@ -101,6 +140,7 @@ public class Activity_Settings extends Activity {
 		startActivity(i);
 	}
 	public void done(View view){
+		date();
 		Context context = getApplicationContext();
 		CharSequence text = "Your data was save cute";
 		int duration = Toast.LENGTH_SHORT;

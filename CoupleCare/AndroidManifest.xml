@@ -31,6 +31,7 @@
         <activity android:name="Activity_Settings"></activity>
         <activity android:name="Activity_changespass"></activity>
         <activity android:name="Activity_ListCalendar"></activity>
+        <activity android:name="Activity_Login"></activity>
     </application>
 
 </manifest>

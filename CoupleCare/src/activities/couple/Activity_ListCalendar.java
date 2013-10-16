@@ -1,7 +1,9 @@
 package activities.couple;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 import listcalendar.ListEntrance;
@@ -10,12 +12,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 import calculatedays.ColorEnum;
@@ -30,18 +32,23 @@ public class Activity_ListCalendar extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
 		SharedPreferences pref = getSharedPreferences("datoswoman", Context.MODE_PRIVATE);
-		int day = pref.getInt("dayb", 0); 
-		int month = pref.getInt("monthb", 0);
-		int year = pref.getInt("yearb", 0);
+		String datestart = pref.getString("datestart", "");
+		long perioddays = pref.getLong("perioddays", 0);
 		
 		Calendar cal = GregorianCalendar.getInstance();
-	       cal.set(Calendar.DAY_OF_MONTH, day);
-	       cal.set(Calendar.YEAR, year);
-	       cal.set(Calendar.MONTH, month);
-	        
-
+	    SimpleDateFormat formattext = new SimpleDateFormat("dd/MM/yyyy");    
+	    Date date1 = null;
+	    try {
+			date1=formattext.parse(datestart);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	   cal.setTime(date1);
+	   String fecha1 = ""+date1;
+	   String periodd = ""+perioddays;
+	   Log.d("Fecha",fecha1 + " "+ periodd);
 	        ArrayList<ListEntrance> datos = new ArrayList<ListEntrance>();  
-	        Day dia = new Day(cal,true,"hola",ColorEnum.BLUE);
+	        Day dia = new Day(cal,true,"hola",ColorEnum.BLUE,perioddays);
 	       
 	        dia.calculateFertilesDays();
 	        for(int i=0; i<=cal.MONTH; i++){

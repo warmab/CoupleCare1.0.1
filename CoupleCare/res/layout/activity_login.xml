@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget0"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageButton
+        android:id="@+id/btnhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="256dp"
+        android:layout_y="16dp"
+        android:onClick="callppalview" />
+
+    <TextView
+        android:id="@+id/tvusname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="116dp"
+        android:layout_y="133dp"
+        android:text="User name:" />
+
+    <EditText
+        android:id="@+id/etuname"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_x="83dp"
+        android:layout_y="153dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="117dp"
+        android:layout_y="201dp"
+        android:text="Password:" />
+
+    <EditText
+        android:id="@+id/etpass"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_x="81dp"
+        android:layout_y="223dp"
+        android:textSize="18sp" />
+
+    <ImageButton
+        android:id="@+id/btnlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="126dp"
+        android:layout_y="287dp"
+        android:onClick="ejecutar" />
+
+    <ImageButton
+        android:id="@+id/btnsignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="125dp"
+        android:layout_y="363dp"
+        android:onClick="signup" />
+
+    <TextView
+        android:id="@+id/tvmessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="60dp"
+        android:layout_y="338dp"
+        android:text="You don´t have an account?:" />
+
+</AbsoluteLayout>

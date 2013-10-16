@@ -11,7 +11,8 @@ public class Day implements Serializable {
     private boolean fertile;
     private String comment = "";
     private ColorEnum color = ColorEnum.BLUE;   // Suponiendo valor por defecto.
-    private int freqDayNumber = 28;
+    private int freqDayNumber = 0;
+    private long periodays = 0;
     private ArrayList<SimpleDate> simpleDatesList = null;
 
     private final String[] freqPeriod = {
@@ -26,6 +27,15 @@ public class Day implements Serializable {
     public ArrayList<SimpleDate> getSimpleDatesList() {
         return simpleDatesList;
     }
+    
+    public long getPeriodays() {
+		return periodays;
+	}
+
+	public void setPeriodays(long periodays) {
+		this.periodays = periodays;
+	}
+
 
     public void calculateFertilesDays() {
         
@@ -36,8 +46,10 @@ public class Day implements Serializable {
         tempCal.set(Calendar.MONTH, fertileDay.get(Calendar.MONTH));
         tempCal.set(Calendar.YEAR, fertileDay.get(Calendar.YEAR));
         
+        setPeriodays(periodays);
         
-        while (fertile) {
+        
+        while (periodays<=periodays) {
         	// Agrego el primer día a la lista (period day)
             simpleDatesList.add(new SimpleDate(tempCal.get(Calendar.DAY_OF_MONTH), 
                     tempCal.get(Calendar.MONTH), tempCal.get(Calendar.YEAR), DayType.PERIOD));
@@ -119,13 +131,14 @@ public class Day implements Serializable {
         this.fertileDay = fertileDay;
     }
 
-    public Day(Calendar fertileDay, boolean fertile, String comment, ColorEnum color) {
+    public Day(Calendar fertileDay, boolean fertile, String comment, ColorEnum color, long perioddays) {
         this.fertileDay = fertileDay;
         this.fertile = fertile;
         this.comment = comment;
         this.color = color;
         this.simpleDatesList = new ArrayList<SimpleDate>();   // jdk7
-        // this.simpleDatesList = new ArrayList<SimpleDate>();   // jdk6
+        // this.simpleDatesList = new ArrayList<SimpleDate>();// jdk6
+        this.periodays = perioddays;
     }
 
     public Day(Calendar fertileDay, boolean fertile) {
@@ -143,4 +156,5 @@ public class Day implements Serializable {
         simpleDatesList.clear();
     }
 
+	
 }
