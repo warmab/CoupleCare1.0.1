@@ -66,7 +66,7 @@ public class Activity_Settings extends Activity {
 		SharedPreferences pref = getSharedPreferences("datawoman",
 				Context.MODE_PRIVATE);
 		String start = pref.getString("datestart", "");
-		String fin = pref.getString("datefinish", "");
+		String fin = pref.getString("datend", "");
 		Calendar cbegin = GregorianCalendar.getInstance();
 		Calendar cfinish = GregorianCalendar.getInstance();
 		Date dateb = null;
@@ -162,6 +162,4 @@ public class Activity_Settings extends Activity {
 		Intent i = new Intent(this, Activity_changespass.class);
 		startActivity(i);
 	}
-	
-	
 }

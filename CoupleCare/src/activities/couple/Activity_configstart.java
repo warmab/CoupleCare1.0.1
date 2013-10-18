@@ -80,7 +80,7 @@ public class Activity_configstart extends Activity {
 		SharedPreferences pref = getSharedPreferences("datawoman",
 				Context.MODE_PRIVATE);
 		String start = pref.getString("datestart", "");
-		String fin = pref.getString("datefinish", "");
+		String fin = pref.getString("datend", "");
 		Calendar cbegin = GregorianCalendar.getInstance();
 		Calendar cfinish = GregorianCalendar.getInstance();
 		Date dateb = null;

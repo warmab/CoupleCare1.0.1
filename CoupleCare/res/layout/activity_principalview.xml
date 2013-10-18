@@ -65,7 +65,8 @@
         android:layout_width="103dp"
         android:layout_height="105dp"
         android:layout_x="192dp"
-        android:layout_y="23dp" />
+        android:layout_y="23dp"
+        android:onClick="showpickerfinish" />
 
     <TextView
         android:id="@+id/tvdatelist"
