@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget0"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/imgintro"
+        android:layout_width="248dp"
+        android:layout_height="114dp"
+        android:layout_x="36dp"
+        android:layout_y="14dp" />
+
+    <TextView
+        android:id="@+id/tvemailw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="127dp"
+        android:layout_y="127dp"
+        android:text="E-mail:" />
+
+    <EditText
+        android:id="@+id/etemailw"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_x="58dp"
+        android:layout_y="156dp"
+        android:ems="10"
+        android:textSize="18sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/etsynpass"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_x="66dp"
+        android:layout_y="250dp"
+        android:ems="10"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/widget33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="118dp"
+        android:layout_y="206dp"
+        android:text="Sync Pass:" />
+
+    <ImageButton
+        android:id="@+id/btnenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="144dp"
+        android:layout_y="322dp"
+        android:onClick="callppalview" />
+
+</AbsoluteLayout>
