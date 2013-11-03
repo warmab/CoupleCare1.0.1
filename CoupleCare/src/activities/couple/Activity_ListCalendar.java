@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,7 +37,7 @@ public class Activity_ListCalendar extends Activity {
 		SharedPreferences pref = getSharedPreferences("datawoman", Context.MODE_PRIVATE);
 		String datestart = pref.getString("datestart", "");
 		Log.d("datestart", datestart);
-		long perioddays = pref.getLong("perioddays", 0);
+		int perioddays = pref.getInt("perioddays", 0);
 		int cycleperiod = pref.getInt("durationcycle", 0);
 		
 		Calendar cal = GregorianCalendar.getInstance();
@@ -51,12 +52,12 @@ public class Activity_ListCalendar extends Activity {
 	    
 	   cal.setTime(date1);
 	   String datestartlist = pref.getString("datestart", "");
-	   SharedPreferences pref2 = getSharedPreferences("actlist", Context.MODE_PRIVATE);
+	   SharedPreferences pref2 = getSharedPreferences("actlist", Context.MODE_PRIVATE);// Se crea una segunda sharedpreferences
 	   
 	   Editor e = pref2.edit();
-	   e.putString("newstartdatel",datestartlist);
-	   e.putLong("perioddays", perioddays);
-	   e.putInt("durationcycle", cycleperiod);
+	   e.putString("newstartdatel",datestartlist); //Guardo la fecha actual de inicio
+	   e.putInt("perioddays", perioddays);//guardo los dias de periodo
+	   e.putInt("durationcycle", cycleperiod);//guardo la duracion del ciclo en la nueva shared
 	   e.commit();
 	   String fecha1 = ""+date1;
 	   String periodd = ""+perioddays;
@@ -70,7 +71,9 @@ public class Activity_ListCalendar extends Activity {
 	        dia.calculateFertilesDays();
 	       for(SimpleDate fecha : dia.getSimpleDatesList()) {
 	        	
-	        	datos.add(new ListEntrance(R.drawable.ic_launcher, fecha.toString(), fecha.getColor().toString()));
+	        	datos.add(new ListEntrance(R.drawable.globorosa, fecha.toString(), fecha.getColor().toString()));
+	        	
+	      
 	        
 	       }
 	        
@@ -79,6 +82,7 @@ public class Activity_ListCalendar extends Activity {
 				@Override
 				public void onEntrada(Object entrada, View view) {
 			        if (entrada != null) {
+			        	
 			            TextView texto_superior_entrada = (TextView) view.findViewById(R.id.textView_superior); 
 			            if (texto_superior_entrada != null) 
 			            	texto_superior_entrada.setText(((ListEntrance) entrada).get_textoEncima()); 
@@ -108,12 +112,14 @@ public class Activity_ListCalendar extends Activity {
 	    }
 	
 	
+	
 	public void next(View view){
 		SharedPreferences pref = getSharedPreferences("actlist", Context.MODE_PRIVATE);
 		String datestart = pref.getString("newstartdatel", "");
 		Log.d("newstartdatel", datestart);
-		long perioddays = pref.getLong("perioddays", 0);
+		int perioddays = pref.getInt("perioddays", 0);
 		int cycleperiod = pref.getInt("durationcycle", 0);
+		
 		
 		Calendar cal = GregorianCalendar.getInstance();
 		
@@ -128,10 +134,11 @@ public class Activity_ListCalendar extends Activity {
 		}
 	   
 	   cal.setTime(date1);
-	   cal.add(Calendar.MONTH, 1);
+	   cal.add(Calendar.DAY_OF_MONTH,cycleperiod);
+	   Log.d("cycle", ""+cycleperiod);
 	   String fecha1 = ""+date1;
 	   String periodd = ""+perioddays;
-	   Log.d("Fecha",fecha1 + " "+ periodd);
+	   Log.d("Fecha",fecha1 + " "+ periodd + cal.toString());
 	   
 	   
 	        ArrayList<ListEntrance> datos = new ArrayList<ListEntrance>();  
@@ -142,7 +149,7 @@ public class Activity_ListCalendar extends Activity {
 	        dia.calculateFertilesDays();
 	       for(SimpleDate fecha : dia.getSimpleDatesList()) {
 	        	
-	        	datos.add(new ListEntrance(R.drawable.ic_launcher, fecha.toString(), fecha.getColor().toString()));
+	        	datos.add(new ListEntrance(R.drawable.globorosa, fecha.toString(), fecha.getColor().toString()));
 	        
 	       }
 	        

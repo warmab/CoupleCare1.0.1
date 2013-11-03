@@ -1,100 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/widget0"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/settingsgirlbackground">
 
-    <ImageButton
-        android:id="@+id/btnlater"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_x="6dp"
-        android:layout_y="64dp" />
+        android:layout_weight="0.53" >
 
-    <ImageButton
-        android:id="@+id/btnhome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="247dp"
-        android:layout_y="9dp" />
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-    <TextView
-        android:id="@+id/tvchspinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="10dp"
-        android:layout_y="121dp"
-        android:hint="Change your cycle days:"
-        android:text="Change Cycle days:" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_gravity="center_vertical">
 
-    <TextView
-        android:id="@+id/beginperiod"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_x="8dp"
-        android:layout_y="196dp"
-        android:text="Change Period Beginning:" />
+                <ImageButton
+                    android:id="@+id/btnlater"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/intimate" />
 
-    <Button
-        android:id="@+id/btnbegin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="10dp"
-        android:layout_y="219dp"
-        android:onClick="showpickerbegin" />
+                <ImageButton
+                    android:id="@+id/btnlogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/done" />
 
-    <ImageButton
-        android:id="@+id/btndone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="50dp"
-        android:layout_y="364dp"
-        android:onClick="done" />
+                <ImageButton
+                    android:id="@+id/btnhome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/start" />
 
-    <ImageButton
-        android:id="@+id/btnchangepass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="227dp"
-        android:layout_y="364dp"
-        android:onClick="changpass" />
+            </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btncancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="142dp"
-        android:layout_y="363dp"
-        android:onClick="cancel" />
+        </TableRow>
 
-    <TextView
-        android:id="@+id/finishperiod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="10dp"
-        android:layout_y="275dp"
-        android:text="Change Period Finish:" />
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/btndatefinish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="9dp"
-        android:layout_y="299dp"
-        android:onClick="showpickerfinish" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-    <Spinner
-        android:id="@+id/spinnerdays"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="16dp"
-        android:layout_y="136dp" />
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Period Cycle Aprox:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <ImageButton
-        android:id="@+id/btnlogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="1dp"
-        android:layout_y="10dp" />
+                <Spinner
+                    android:id="@+id/spinnerdays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-</AbsoluteLayout>
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Begin Period:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ImageButton
+                    android:id="@+id/btnbegin"
+                    android:layout_width="180dp"
+                    android:layout_height="116dp"
+                    android:onClick="showpickerbegin"
+                    android:src="@drawable/startperiod" />
+
+                <TextView
+                    android:id="@+id/tvfperiod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finish Period:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ImageButton
+                    android:id="@+id/btndatefinish"
+                    android:layout_width="180dp"
+                    android:layout_height="116dp"
+                    android:onClick="showpickerfinish"
+                    android:src="@drawable/stopperiod" />
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btndone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/done" />
+
+                <ImageButton
+                    android:id="@+id/btnccha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/end" />
+
+                <ImageButton
+                    android:id="@+id/btnchangepass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/alarm" />
+
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

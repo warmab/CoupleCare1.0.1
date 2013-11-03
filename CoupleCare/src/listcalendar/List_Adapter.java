@@ -1,12 +1,21 @@
 package listcalendar;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
+import activities.couple.R;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import calculatedays.ColorEnum;
+import calculatedays.Day;
+import calculatedays.SimpleDate;
 
 public abstract class List_Adapter extends BaseAdapter {
 	private ArrayList<?> entradas;
@@ -24,9 +33,11 @@ public abstract class List_Adapter extends BaseAdapter {
 	@Override
 	public View getView(int posicion, View view, ViewGroup pariente) {
 		if (view == null) {
+			
 			LayoutInflater vi = (LayoutInflater) contexto
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			view = vi.inflate(R_layout_IdView, null);
+			
 		}
 		onEntrada(entradas.get(posicion), view);
 		return view;

@@ -8,7 +8,7 @@ public enum ColorEnum {
         }
         @Override
         public String getHexCode() {
-            return "#FF0000";
+            return "#FF5459";
         }
     },
     BLUE {
@@ -34,6 +34,6 @@ public enum ColorEnum {
     // rojo: #FF0000
     // azul: #0000FF
     // verde: #00FF00
-    abstract String getColorName();
-    abstract String getHexCode();
+  public abstract String getColorName();
+  public  abstract String getHexCode();
 }

@@ -16,8 +16,8 @@ public class Activity_changespass extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_changepass);
-		etemail = (EditText) findViewById(R.id.etmail);
-		etactpass = (EditText) findViewById(R.id.etacpass);
+		etemail = (EditText) findViewById(R.id.etemail);
+		etactpass = (EditText) findViewById(R.id.etactpass);
 		etnpass = (EditText) findViewById(R.id.etnpass);
 		etvnpass = (EditText) findViewById(R.id.etvpass);
 

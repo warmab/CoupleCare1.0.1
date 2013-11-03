@@ -26,8 +26,8 @@ public class Activity_Login extends Activity {
 		etuname = (EditText) findViewById(R.id.etuname);
 		etpass = (EditText) findViewById(R.id.etpass);
 		tvmessage = (TextView) findViewById(R.id.tvmessage);
-		btnsignup = (ImageButton) findViewById(R.id.btnsignup);
-		SharedPreferences pref = getSharedPreferences("datawoman",
+		btnsignup = (ImageButton) findViewById(R.id.btnsignuo);
+		/*SharedPreferences pref = getSharedPreferences("datawoman",
 				Context.MODE_PRIVATE);
 		Boolean loged = pref.getBoolean("logged", false);
 		if (loged.equals(true)) {
@@ -43,13 +43,15 @@ public class Activity_Login extends Activity {
 				tvmessage.setVisibility(View.VISIBLE);
 				btnsignup.setVisibility(View.VISIBLE);
 			}
-		}
+		}*/
 
 	}
 
-	public void ejecutar(View view) {
+	public void execute(View view) {
 		String uname = etuname.getText().toString();
 		String pass = etpass.getText().toString();
+		Log.d("uname", uname);
+		Log.d("pass", pass);
 
 		SharedPreferences settigns = getSharedPreferences("datawoman",
 				Context.MODE_PRIVATE);
@@ -58,7 +60,7 @@ public class Activity_Login extends Activity {
 		// finish();
 
 		if (uname.equals(uname1) && pass.equals(passshared)) {
-			Toast.makeText(getApplicationContext(), "Welcome" + uname,
+			Toast.makeText(getApplicationContext(), "Welcome" + " " +uname,
 					Toast.LENGTH_LONG).show();
 			Boolean logged = true;
 			Editor editor = settigns.edit();

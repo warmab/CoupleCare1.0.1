@@ -1,87 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/AbsoluteLayout"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TableLayout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/signupwm">
 
-    <TextView
-        android:id="@+id/tvemail"
+    <ImageView
+        android:id="@+id/widget57"
         android:layout_width="wrap_content"
+        android:layout_height="97dp"
+        android:src="@drawable/singup" />
+
+    <TableRow
+        android:id="@+id/widget66"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_x="58dp"
-        android:layout_y="109dp"
-        android:text="Email:" />
+        android:orientation="horizontal" >
 
-    <EditText
-        android:id="@+id/etmail"
-        android:layout_width="149dp"
-        android:layout_height="38dp"
-        android:layout_x="146dp"
-        android:layout_y="100dp"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:" />
+    </TableRow>
 
-    <EditText
-        android:id="@+id/etacpass"
-        android:layout_width="149dp"
-        android:layout_height="38dp"
-        android:layout_x="145dp"
-        android:layout_y="145dp"
-        android:textSize="18sp" />
+    <TableRow
+        android:id="@+id/widget74"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-    <EditText
-        android:id="@+id/etnpass"
-        android:layout_width="149dp"
-        android:layout_height="38dp"
-        android:layout_x="145dp"
-        android:layout_y="185dp"
-        android:textSize="18sp" />
+        <EditText
+            android:id="@+id/etemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:inputType="textEmailAddress"
+            android:textSize="18sp" />
+    </TableRow>
 
-    <EditText
-        android:id="@+id/etvpass"
-        android:layout_width="149dp"
-        android:layout_height="38dp"
-        android:layout_x="144dp"
-        android:layout_y="223dp"
-        android:textSize="18sp" />
+    <TableRow
+        android:id="@+id/widget77"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-    <ImageButton
-        android:id="@+id/btnchange"
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actual Sync Pass:" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/widget79"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/etactpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:inputType="textPassword"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/widget66"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Sync Pass:" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/widget67"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/etnpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:textSize="18sp" >
+
+            <requestFocus />
+        </EditText>
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/widget68"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify New Password:" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/widget72"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/etvpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:inputType="textPassword"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <RelativeLayout
+        android:id="@+id/widget75"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="84dp"
-        android:layout_y="318dp"
-        android:onClick="changes" />
+        android:layout_height="wrap_content" >
 
-    <ImageButton
-        android:id="@+id/btncancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="190dp"
-        android:layout_y="317dp"
-        android:onClick="cancel" />
+        <ImageButton
+            android:id="@+id/btncchange"
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/widget76"
+            android:onClick="cancel"
+            android:src="@drawable/cancel" />
 
-    <TextView
-        android:id="@+id/tvapass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="22dp"
-        android:layout_y="153dp"
-        android:text="Actual pass Sync:" />
+        <ImageButton
+            android:id="@+id/btnchange"
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="20dp"
+            android:onClick="changes"
+            android:src="@drawable/changesettings" />
 
-    <TextView
-        android:id="@+id/tvnpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="25dp"
-        android:layout_y="190dp"
-        android:text="New pass Sync:" />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/tvvnpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="6dp"
-        android:layout_y="230dp"
-        android:text="Verify New Pass Sync:" />
-
-</AbsoluteLayout>
+</TableLayout>

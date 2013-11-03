@@ -60,6 +60,8 @@ public class Activity_Settings extends Activity {
 
 			}
 		});
+		
+		
 	}
 	
 	public void date() {
@@ -78,9 +80,9 @@ public class Activity_Settings extends Activity {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		long diference = Math.abs(datef.getDate() - dateb.getDate());
+		int diference = restarFechas(dateb, datef);
 		Editor editor = pref.edit();
-		editor.putLong("perioddays", diference);
+		editor.putInt("perioddays", diference);
 		editor.commit();
 
 		/*Toast.makeText(getApplicationContext(), "Thanks for your information",
@@ -92,7 +94,32 @@ public class Activity_Settings extends Activity {
 		Log.d("DiferenceDate", str);
 		Log.d("Begin", begin);
 		Log.d("finish", finish);
+		
 	}
+	
+	  public static int restarFechas(Date fechaIn, Date fechaFinal) {
+	        GregorianCalendar fechaInicio = new GregorianCalendar();
+	        fechaInicio.setTime(fechaIn);
+	        GregorianCalendar fechaFin = new GregorianCalendar();
+	        fechaFin.setTime(fechaFinal);
+	        int dias = 0;
+	        if (fechaFin.get(Calendar.YEAR) == fechaInicio.get(Calendar.YEAR)) {
+	            dias = (fechaFin.get(Calendar.DAY_OF_YEAR) - fechaInicio.get(Calendar.DAY_OF_YEAR)) + 1;
+	        } else {
+	            int rangoAnyos = fechaFin.get(Calendar.YEAR) - fechaInicio.get(Calendar.YEAR);
+	            for (int i = 0; i <= rangoAnyos; i++) {
+	                int diasAnio = fechaInicio.isLeapYear(fechaInicio.get(Calendar.YEAR)) ? 366 : 365;
+	                if (i == 0) {
+	                    dias = 1 + dias + (diasAnio - fechaInicio.get(Calendar.DAY_OF_YEAR));
+	                } else if (i == rangoAnyos) {
+	                    dias = dias + fechaFin.get(Calendar.DAY_OF_YEAR);
+	                } else {
+	                    dias = dias + diasAnio;
+	                }
+	            }
+	        }
+	        return dias;
+	    }
 	
 	@SuppressLint("NewApi")
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)

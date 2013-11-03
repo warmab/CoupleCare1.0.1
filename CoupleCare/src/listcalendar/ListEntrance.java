@@ -5,6 +5,7 @@ public class ListEntrance{
 	private int idImagen; 
 	private String textoEncima; 
 	private String textoDebajo; 
+	
 
 	public ListEntrance(int idImagen, String textoEncima, String textoDebajo) { 
 	    this.idImagen = idImagen; 

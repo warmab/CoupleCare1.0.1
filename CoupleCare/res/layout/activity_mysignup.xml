@@ -1,103 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/widget0"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/signupbackground" >
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_x="51dp"
-        android:layout_y="137dp"
-        android:text="User Name:" />
+        android:layout_gravity="center" >
 
-    <TextView
-        android:id="@+id/tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="62dp"
-        android:layout_y="177dp"
-        android:text="Email:" />
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/etuname"
-        android:layout_width="171dp"
-        android:layout_height="wrap_content"
-        android:layout_x="131dp"
-        android:layout_y="126dp"
-        android:inputType="textPersonName"
-        android:text=""
-        android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" >
 
-    <EditText
-        android:id="@+id/etemail"
-        android:layout_width="171dp"
-        android:layout_height="wrap_content"
-        android:layout_x="132dp"
-        android:layout_y="166dp"
-        android:inputType="textEmailAddress"
-        android:text=""
-        android:textSize="18sp" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="63dp"
-        android:layout_y="217dp"
-        android:text="Pass:" />
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="168dp"
+                android:layout_height="178dp"
+                android:src="@drawable/globorosa" />
 
-    <EditText
-        android:id="@+id/etpass"
-        android:layout_width="171dp"
-        android:layout_height="wrap_content"
-        android:layout_x="132dp"
-        android:layout_y="205dp"
-        android:inputType="textPassword"
-        android:text=""
-        android:textSize="18sp" />
+        </TableRow>
 
-    <TextView
-        android:id="@+id/tv4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="46dp"
-        android:layout_y="255dp"
-        android:text="Pass Verify:" />
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-    <EditText
-        android:id="@+id/etpassv"
-        android:layout_width="171dp"
-        android:layout_height="wrap_content"
-        android:layout_x="132dp"
-        android:layout_y="244dp"
-        android:inputType="textPassword"
-        android:text=""
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username:" />
 
-    <ImageButton
-        android:id="@+id/btnsend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="70dp"
-        android:layout_y="324dp"
-        android:onClick="execute" />
+            <EditText
+                android:id="@+id/etuname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:ems="10" >
 
-    <ImageButton
-        android:id="@+id/btncancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="175dp"
-        android:layout_y="324dp" />
+                <requestFocus />
+            </EditText>
 
-    <Button
-        android:id="@+id/btnsignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="94dp"
-        android:layout_y="368dp"
-        android:onClick="callsignup"
-        android:text="Signup" />
+        </TableRow>
 
-</AbsoluteLayout>
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:" />
+
+            <EditText
+                android:id="@+id/etemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:background="@android:drawable/editbox_background"
+                android:inputType="textEmailAddress" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password:" />
+
+            <EditText
+                android:id="@+id/etpass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:background="@android:drawable/editbox_background"
+                android:inputType="textPassword" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PassVerify:" />
+
+            <EditText
+                android:id="@+id/etpassv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:background="@android:drawable/editbox_background"
+                android:inputType="textPassword" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageButton
+                android:id="@+id/btnend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="callloginview"
+                android:src="@drawable/end" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="execute"
+                android:src="@drawable/send" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

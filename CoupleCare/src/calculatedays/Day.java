@@ -11,16 +11,17 @@ public class Day implements Serializable {
 	private boolean fertile;
 	private String comment = "";
 	private ColorEnum color = ColorEnum.BLUE; // Suponiendo valor por defecto.
+	//private Months month = Months.JANUARY;
 	private int freqDayNumber = 0;
-	private long periodays = 0;
+	private int periodays = 0;
 	private ArrayList<SimpleDate> simpleDatesList = null;
 
 	private final String[] freqPeriod = { "21", "22", "23", "24", "25", "26",
 			"27", "28", "29", "30", "31", "32", "33", "34", "35" };
 
-	private long _perioddays = -1;
+	private int _perioddays = -1;
 
-	public void setPeriod(long x) {
+	public void setPeriod(int x) {
 		_perioddays = x;
 	}
 
@@ -42,7 +43,7 @@ public class Day implements Serializable {
 		return periodays;
 	}
 
-	public void setPeriodays(long periodays) {
+	public void setPeriodays(int periodays) {
 		this.periodays = periodays;
 	}
 
@@ -73,7 +74,7 @@ public class Day implements Serializable {
 				tempCal.get(Calendar.MONTH), tempCal.get(Calendar.YEAR),
 				DayType.PERIOD));
 		// Haciendo el ciclo dependiendo de la variable utilizada
-		for (int i = 0; i < _perioddays; i++) {
+		for (int i = 1; i < _perioddays; i++) {
 			
 			// Le sumo un día al period start:
 						tempCal.add(Calendar.DAY_OF_MONTH, 1);

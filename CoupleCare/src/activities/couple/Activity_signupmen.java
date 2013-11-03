@@ -20,9 +20,9 @@ public class Activity_signupmen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_signupmen);
 		
-		etunmen = (EditText) findViewById(R.id.etunamem);
+		etunmen = (EditText) findViewById(R.id.etunamen);
 		etpassync = (EditText) findViewById(R.id.etpassync);
-		etemail = (EditText) findViewById(R.id.etemailm);
+		etemail = (EditText) findViewById(R.id.etemailmen);
 		
 		SharedPreferences  prefe = getSharedPreferences("datawoman", Context.MODE_PRIVATE);
 		etunmen.setText(prefe.getString("unamem", ""));

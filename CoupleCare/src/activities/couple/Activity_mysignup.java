@@ -23,25 +23,7 @@ public class Activity_mysignup extends Activity {
 		etmail = (EditText) findViewById(R.id.etemail);
 		etpass = (EditText) findViewById(R.id.etpass);
 		etpassv = (EditText) findViewById(R.id.etpassv);
-		SharedPreferences prefsignp = getSharedPreferences("datawoman",
-				Context.MODE_PRIVATE);
-		etuname.setText(prefsignp.getString("username", ""));
-		etmail.setText(prefsignp.getString("mail", ""));
-		etpass.setText(prefsignp.getString("pass", ""));
-		etpassv.setText(prefsignp.getString("passv", ""));
-		Boolean data = prefsignp.getBoolean("datawexist", false);
-		Boolean datamen = prefsignp.getBoolean("Couplexist", false);
-		if(data.equals(true) && datamen.equals(true) ){
-			calllogin();
-		}
-		else if(data!=true){
-			callsignup();
-		}else if (datamen!=true) {
-			callsignupmen();
-		}else if(data.equals(true) && datamen.equals(false)){
-			
-		}
-		
+
 	}
 
 	public void execute(View view) {
@@ -78,6 +60,7 @@ public class Activity_mysignup extends Activity {
 		Editor editor = prefsingp1.edit();
 
 		if (pass.equals(passv)) {
+
 			// Put the variables like data of sharedpreferences of woman
 			editor.putString("username", uname);
 			editor.putString("email", email);
@@ -85,6 +68,8 @@ public class Activity_mysignup extends Activity {
 			editor.putBoolean("datawexist", true);
 
 			editor.commit();
+			Toast.makeText(getApplicationContext(), "Password Corrects",
+					Toast.LENGTH_LONG).show();
 
 			// Create the alert dialog to ask for if women want to register
 			// partner
@@ -98,9 +83,7 @@ public class Activity_mysignup extends Activity {
 						// activity.
 						@Override
 						public void onClick(DialogInterface dialog1, int id) {
-
 							callsignupmen();
-
 						}
 
 					});
@@ -152,7 +135,7 @@ public class Activity_mysignup extends Activity {
 		it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(it);
 	}
-	
+
 	private void callsignup() {
 		Intent it = new Intent(this, Activity_mysignup.class);
 		it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -172,6 +155,10 @@ public class Activity_mysignup extends Activity {
 	public void calllogin() {
 		Intent i = new Intent(this, Activity_Login.class);
 		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(i);
+	}
+	public void callloginview(View v) {
+		Intent i = new Intent(this, Activity_Login.class);
 		startActivity(i);
 	}
 

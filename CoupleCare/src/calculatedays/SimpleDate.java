@@ -1,5 +1,9 @@
 package calculatedays;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 public class SimpleDate {
 
     private int day;
@@ -7,6 +11,8 @@ public class SimpleDate {
     private int year;
     private ColorEnum color;
     private DayType dayType;
+    private String monthview;
+	
 
     public SimpleDate(int day, int month, int year, DayType dayType) {
 
@@ -30,8 +36,23 @@ public class SimpleDate {
                 color = ColorEnum.RED;      
                 break;
         }
+        
+        
+     
     }
     
+    @Override
+    public boolean equals(Object o) {
+        if(o == null) {
+            return false;
+        }
+        SimpleDate d = (SimpleDate)o;
+        if(d.day == this.day && d.month == month && d.year == year) {
+            return true;
+        }
+        return false;
+    }
+       
     public ColorEnum getColor() {
         return color;
     }
@@ -76,5 +97,13 @@ public class SimpleDate {
     public String toString() {
         return day + "/" + month + "/" + year + "-" + dayType;
     }
+
+	public String getMonthview() {
+		return monthview;
+	}
+
+	public void setMonthview(String monthview) {
+		this.monthview = monthview;
+	}
     
 }

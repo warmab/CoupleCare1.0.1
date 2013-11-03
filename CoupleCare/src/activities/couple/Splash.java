@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 public class Splash extends Activity {
 	// Splash screen time
-	public static int SPLASH_TIME_OUT = 10000;
+	public static int SPLASH_TIME_OUT = 6000;
 	public static String INITIALIZED = "initialized";
 
 	@Override
@@ -40,10 +40,9 @@ public class Splash extends Activity {
 				
 				@Override
 				public void run() {
-
+					animacion();
 					// Cerrar esta actividad.}/
 					
-					finish();
 
 				}
 			}, SPLASH_TIME_OUT);
@@ -57,7 +56,6 @@ public class Splash extends Activity {
 	// Metodo para la animacion del splash
 	public void animacion() {
 		ImageView img1 = (ImageView) findViewById(R.id.imgLogo);
-
 		Animation fadein1 = AnimationUtils.loadAnimation(this, R.anim.fade_in1);
 		img1.startAnimation(fadein1);
 
@@ -67,6 +65,5 @@ public class Splash extends Activity {
 		Intent i = new Intent(this, Activity_mysignup.class);
 		 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		 startActivity(i);
-
 	}
 }
