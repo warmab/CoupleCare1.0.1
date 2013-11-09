@@ -32,37 +32,39 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int imagensplash=0x7f020001;
-        public static final int splash1=0x7f020002;
-        public static final int splash71=0x7f020003;
-        public static final int splashimage=0x7f020004;
+        public static final int backgrounden=0x7f020000;
+        public static final int btnupdate=0x7f020001;
+        public static final int globosazul=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int iconoappmen=0x7f020004;
+        public static final int imagensplash=0x7f020005;
+        public static final int imgfertil=0x7f020006;
+        public static final int imglesfertil=0x7f020007;
+        public static final int imgmostfertil=0x7f020008;
+        public static final int imgperioddaya=0x7f020009;
+        public static final int splash1=0x7f02000a;
+        public static final int splash71=0x7f02000b;
+        public static final int splashimage=0x7f02000c;
+        public static final int updatetext=0x7f02000d;
     }
     public static final class id {
-        public static final int ListView_listado=0x7f090007;
-        public static final int action_settings=0x7f090017;
-        public static final int btncalendar=0x7f090011;
-        public static final int btnenter=0x7f090006;
-        public static final int btnfinishper=0x7f090013;
-        public static final int btnlist=0x7f090016;
-        public static final int btnnext=0x7f090009;
-        public static final int etemailw=0x7f090003;
-        public static final int etsynpass=0x7f090004;
-        public static final int imageView_imagen=0x7f09000a;
-        public static final int imgintro=0x7f090001;
-        public static final int sunimage=0x7f090010;
-        public static final int textView_inferior=0x7f09000c;
-        public static final int textView_superior=0x7f09000b;
-        public static final int todayimg=0x7f09000d;
-        public static final int tvcalc=0x7f090008;
+        public static final int ListView_listado=0x7f090005;
+        public static final int action_settings=0x7f090010;
+        public static final int btnenter=0x7f090004;
+        public static final int btnfertil=0x7f09000c;
+        public static final int btnnext=0x7f090007;
+        public static final int btnupdate=0x7f09000d;
+        public static final int etemailw=0x7f090001;
+        public static final int etsynpass=0x7f090003;
+        public static final int imageView_imagen=0x7f090008;
+        public static final int logout=0x7f09000e;
+        public static final int textView_inferior=0x7f09000a;
+        public static final int textView_superior=0x7f090009;
+        public static final int tv_pw=0x7f090002;
+        public static final int tv_un=0x7f090000;
+        public static final int tvcalc=0x7f090006;
         public static final int tvdate=0x7f09000f;
-        public static final int tvdatelist=0x7f090014;
-        public static final int tvdaysleft=0x7f090012;
-        public static final int tvemailw=0x7f090002;
-        public static final int tvstatus=0x7f090015;
-        public static final int tvtoday=0x7f09000e;
-        public static final int widget0=0x7f090000;
-        public static final int widget33=0x7f090005;
+        public static final int widget0=0x7f09000b;
     }
     public static final class layout {
         public static final int activity_couplesettings=0x7f030000;
